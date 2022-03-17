@@ -1,5 +1,130 @@
 :root {
   --nodbank-black: '#0A1B2B';
+  --nodbank-purple: '#BA9FE6';
+}
+
+@font-face {
+  font-family: Mena Grotesk;
+  src: url(../fonts/menagrotesk/mena-grotesk-light.otf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Mena Grotesk;
+  src: url(../fonts/menagrotesk/mena-grotesk-regular.otf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Mena Grotesk;
+  src: url(../fonts/menagrotesk/mena-grotesk-semibold.otf);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Mena Grotesk;
+  src: url(../fonts/menagrotesk/mena-grotesk-bold.otf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Mena Grotesk;
+  src: url(../fonts/menagrotesk/mena-grotesk-black.otf);
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: Mena Grotesk;
+  src: url(../fonts/menagrotesk/mena-grotesk-ultralight.otf);
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: Mena Grotesk;
+  src: url(../fonts/menagrotesk/mena-grotesk-bold.otf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Mena Grotesk;
+  src: url(../fonts/menagrotesk/mena-grotesk-ultrabold.otf);
+  font-weight: bolder;
+}
+
+@font-face {
+  font-family: Mazzard;
+  src: url(../fonts/mazzard/mazzard-light.otf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Mazzard;
+  src: url(../fonts/mazzard/mazzard-regular.otf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Mazzard;
+  src: url(../fonts/mazzard/mazzard-semibold.otf);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Mazzard;
+  src: url(../fonts/mazzard/mazzard-bold.otf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Mazzard;
+  src: url(../fonts/mazzard/mazzard-black.otf);
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: Mazzard;
+  src: url(../fonts/mazzard/mazzard-extralight.otf);
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: Mazzard;
+  src: url(../fonts/mazzard/mazzard-bold.otf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Mazzard;
+  src: url(../fonts/mazzard/mazzard-extrabold.otf);
+  font-weight: bolder;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6, 
+.v-application, 
+.v-application .display-1, 
+.v-application .display-2, 
+.v-application .display-3, 
+.v-application .display-4, 
+.v-application .text-h1,  
+.v-application .text-h2,  
+.v-application .text-h3,  
+.v-application .text-h4,  
+.v-application .text-h5,  
+.v-application .text-h6,  
+.v-application .headline {
+    font-family: Mena Grotesk, sans-serif !important;
+}
+
+.v-application .subtitle-1, 
+.v-application .subtitle-2, 
+.v-application .title, 
+.v-application .nd-altfont {
+  font-family: Mazzard, sans-serif !important;
 }
 
 .nb-black {
@@ -7,5 +132,49 @@
 }
 
 .curved {
-  border-radius: 60px;
+  border-radius: 60px !important;
+}
+
+.curved-bl-xl {
+  border-bottom-left-radius: 80px !important;
+}
+
+.curved-br-xl {
+  border-bottom-right-radius: 80px !important;
+}
+
+.v-application .v-text-field--outlined.white-input fieldset {
+  border-color: white !important;
+}
+
+.v-application .v-text-field--outlined.white-input input {
+  padding: 0 10px;
+  color: white;
+}
+
+.v-application .v-text-field--outlined.white-input input:focus {
+  padding: 0 10px;
+  color: yellow;
+  caret-color: white;
+}
+
+.v-application .v-text-field--outlined.white-input input::placeholder {
+  color: var(--nodbank-purple) !important;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: yellow;
+  border-radius: 10px;
+  border: transparent;
 }

@@ -1,32 +1,58 @@
 <template>
   <div class="header-jumbotron">
-    <div class="primary" style="min-height: 110vh;">
+    <div class="primary curved-bl-xl curved-br-xl" style="min-height: 110vh;">
+      <v-container>
+        <v-row class="pt-10 pb-8">
+          <v-col cols="12">
+            <div class="d-flex align-center justify-space-between">
+              <div class="d-flex align-center">
+                <v-img :src="require('@/assets/icons/logo.svg')" class="mb-2 mr-2"></v-img>
+                <h1 class="white--text nd-altfont mb-0" style="font-size: 2.4rem;">Nodbank</h1>
+              </div>
+              <div>
+                <v-btn x-large class="secondary nb-black text-capitalize curved">
+                  <span class="nb-black">Join Waitlist</span>
+                </v-btn>
+              </div>
+            </div>
+          </v-col>
+        </v-row>
+      </v-container>
       <v-container>
         <v-row>
-
-       <v-col cols="12">
-
-      
-        <div class="d-flex align-center justify-space-between">
-          <div class="d-flex align-center">
-            <v-img :src="require('@/assets/icons/logo.svg')"></v-img>
-            <h1 class="white--text">NodBank</h1>
-          </div>
-          <div>
-            <v-btn x-large class="secondary nb-black text-capitalize curved">
-              <span class="nb-black font-weight-bold">Join Waitlist</span>
-            </v-btn>
-          </div>
-        </div>
-       </v-col>
+          <v-col cols="6">
+            <div>
+            <h1 class="font-weight-bold white--text" style="font-size: 4.5rem; line-height: 5.5rem">The People's Bank - banking tailored for you</h1>
+            <p class="nd-altfont white--text font-weight-light title mt-6">Imagine your bank recommending your next barber, helping you book appointments plus discount on your sessions, all these and more is being made possible. You’ll be the first to know when things are up and running.</p>
+            <div class="d-flex align-start">
+              <v-text-field class='white-input curved' placeholder="Enter your email" outlined></v-text-field>
+              
+              <v-btn class="secondary curved nb-black text-capitalize mt-1 ml-4" x-large>
+                <span class="nb-black font-weight-medium">Join Waitlist</span>
+              </v-btn>
+            </div>
+            </div>
+          </v-col>
+          <v-col cols="6" class="pl-16">
+            <div style="height: 100%; position: relative">
+            <v-card style="height: 100%;" :img="require('@/assets/images/home-image.webp')" class="rounded-xl pa-4 d-flex align-end">
+            </v-card>
+            <div style="position: absolute; bottom: -70px; left: -40px; min-height: 200px; width: 105%;">
+              <v-row>
+                <v-col cols="5">
+                  <v-card height="200px" class='rounded-xl'>
+                  </v-card>
+                </v-col>
+                <v-col cols="7" class="px-4">
+                  <v-card height="110px" class="rounded-xl"></v-card>
+                </v-col>
+              </v-row>   
+            </div>
+            </div>
+          </v-col>
         </v-row>
       </v-container>
     </div>
-    <v-container>
-      <div class="d-flex">
-
-      </div>
-    </v-container>
     <div>
 
     </div>
