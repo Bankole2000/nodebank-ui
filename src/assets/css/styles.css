@@ -1,0 +1,11 @@
+:root {
+  --nodbank-black: '#0A1B2B';
+}
+
+.nb-black {
+  color: var(--nodbank-black) !important;
+}
+
+.curved {
+  border-radius: 60px;
+}
