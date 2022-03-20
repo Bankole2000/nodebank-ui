@@ -47,18 +47,39 @@
             <div style="position: absolute; top: 70px; left: -40px; min-height: 70vh; width: 125%;">
               <v-row>
                 <v-col cols="5">
-                  <v-card height="200px" class='rounded-xl'>
+                  <v-card min-height="200px" elevation="0" class='rounded-xl elevated-light'>
+                    <v-card-title>
+                      <span class="subtitle-2 font-weight-light grey--text">Earning Summary</span>
+                    </v-card-title>
+                    <div class="d-flex align-start px-4">
+                      <v-img :src="require('@/assets/icons/smallchart.svg')" max-width="100"></v-img>
+                      <div class="ml-n4">
+                        <h2>&#8358;500,000</h2>
+                        <p class="caption grey--text">Since the last 7 days</p>
+                      </div>
+                    </div>
+                    <div class="d-flex px-4">
+                      <v-divider></v-divider>
+                    </div>
                   </v-card>
                 </v-col>
                 <v-col cols="2"></v-col>
                 <v-col cols="4" class="pr-8">
                   
 
-                  <v-card height="20vh" class="rounded-xl" style="margin-top: 40vh;">
-                    <v-responsive :aspect-ratio="1">
-
-                    Some content
-                    </v-responsive>
+                  <v-card min-height="20vh" elevation="0" class="rounded-xl elevated-light" style="margin-top: 40vh;">
+                    <v-card-title>
+                      <span class="subtitle-2 font-weight-light grey--text">Recommendations</span>
+                    </v-card-title>
+                    <div class="px-4 pb-1">
+                      <div style="position: relative;" class="mb-4">
+                        <v-img :src="require('@/assets/icons/tag.svg')"></v-img>
+                        <v-img :src="require('@/assets/icons/star.svg')" style="position: absolute; top: -10px; left: 60%;"></v-img>
+                        <v-img :src="require('@/assets/icons/star.svg')" style="position: absolute; bottom: -10px; left: 30%;"></v-img>
+                      </div>
+                      <p class="caption grey--text text-center">There are <strong>12 vendors</strong> new you with discounts on your first purchase!</p>
+                    </div>
+                    
                   </v-card>
                   
                 </v-col>

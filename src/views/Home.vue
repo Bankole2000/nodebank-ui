@@ -18,12 +18,12 @@
       <FeaturesBlock />
       </div>
     </div>
-    <div class="panel d-flex align-center justify-center white create" style="min-height: 110vh; margin-top: 0vh; z-index: 2;">
+    <div class="panel d-flex align-center justify-center white create" style="min-height: 120vh; margin-top: 0vh; z-index: 2;">
       <div style="width: 100vw;">
         <v-container>
           <v-row style="padding-top: 20vh;">
             <v-col cols="7">
-              <v-card rounded='lg' elevation="0">
+              <v-card rounded='lg' elevation="0" class="pr-12">
                 
                   <v-img
                   :aspect-ratio="1"
@@ -62,17 +62,117 @@
                 </div>
                 <p class="mb-0 mt-8 ml-2">Freedom to move your money anytime and anywhere.</p>
               </v-card>
+              <v-card elevation="0" class="mt-16" style="position: relative">
+                <div style="position: absolute; top: 0; left: 0; width: 100%" class="rounded-lg pb-8 pt-10 nb-bg-green-lt">
+                  <div class="px-8 d-flex mb-12">
+                    <v-btn outlined color="grey lighten-1" class="text-capitalize font-weight-light">
+                      <span>Cashflow</span>
+                    </v-btn>
+                    <v-spacer></v-spacer>
+                    <v-btn outlined color="grey lighten-1" class="text-capitalize font-weight-light"><v-icon left>mdi-filter-variant</v-icon> Last 7 Days</v-btn>
+                  </div>
+                  <v-img :src="require('@/assets/icons/chart.svg')">
+                  <div class="d-flex justify-center">
+                    <div class="white px-4 py-3 mt-2 rounded-lg">
+                      <p class="mb-0">$560</p>
+                    </div>
+                  </div>
+                  </v-img>
+                  <div class="px-8">
+
+                    <p class="nb-altfont mb-0">Get reports on your cashflow and monitor expenses</p>
+                  </div>
+                </div>
+              </v-card>
             </v-col>
           </v-row>
         </v-container>
       </div>
     </div>
     
-    <div class="panel d-flex align-center justify-center" style="min-height: 80vh;">
+    <div class="panel" style="min-height: 80vh; background-color: none;">
       &nbsp;
     </div>
-    <div class="panel d-flex align-center justify-center info" style="min-height: 110vh;">
-      <h1>Yet Another Section</h1>
+    <div class="panel white" style="margin-top: -100px">
+      <div class="d-flex align-center justify-center" style="min-height: 110vh; background-color: #F4F7F4" :style="{backgroundImage: `url(${require('@/assets/images/backgroundImages/purplegradient.svg')}), url(${require('@/assets/images/backgroundImages/greengradient.svg')})`, backgroundPosition: 'top left 20vw, top right 0px'}">
+
+      <Projections />
+      </div>
+    </div>
+    <div>
+      <div>
+        <v-container>
+          <v-row>
+            <v-col cols="12" class="py-12">
+              <v-card height="30vh" elevation="0" class="rounded-xl pa-16" :style="{ backgroundImage: `url(${require('@/assets/images/backgroundImages/purplegradientdown.svg')}), url(${require('@/assets/images/backgroundImages/greengradient.svg')}), url(${require('@/assets/images/backgroundImages/yellowgradient.svg')})`, backgroundPosition: 'top left 0, top right -10vw, center left 0'}">
+                <div style="width: 100%; background-color: none; height: 100%; position: relative;" >
+                  <div class="rounded-lg elevated-light pa-16" style="width: 100%; background-color: white; position: absolute; bottom: 0;">
+                    <h1 class="text-center px-16 mb-16">We've created products that are solving problems for over 50,000+ people</h1>
+                    <div class="mb-4">
+                      <v-img :src="require('@/assets/icons/nodcheckoutlogo.svg')" max-width="250px"></v-img>
+                    </div>
+                  </div>
+                </div>
+              </v-card>
+            </v-col>
+
+          </v-row>
+          <v-row>
+            <v-col cols="12">
+              <div class="d-flex align-center justify-space-between pa-16 pb-12 rounded-xl" style="background-color: #F4F7F4">
+                <div style="flex: 2">
+                  <h1 class="mb-0">Be the first to know when we launch</h1>
+                </div>
+                <div style="flex: 1;">
+                  &nbsp;
+                </div>
+                <div class='d-flex align-center' style="flex: 3;">
+                   <v-text-field class='curved' placeholder="Enter your email" hide-details outlined></v-text-field>
+              
+              <v-btn class="primary white--text curved nb-black text-capitalize mt-1 ml-4" x-large>
+                <span class="font-weight-medium">Join Waitlist</span>
+              </v-btn>
+                </div>
+              </div>
+            </v-col>
+          </v-row>
+        </v-container>
+      </div>
+    </div>
+    <div>
+      <div>
+        <v-container>
+          <v-row class="my-8">
+            <v-col cols="12">
+              <div class="nb-black-bg rounded-xl pa-16">
+                <div class="d-flex align-center">
+                  <div style="flex: 1;">
+
+                  <v-img :src="require('@/assets/icons/logowhite.svg')" max-width="250"></v-img>
+                  </div>
+                  <div class="d-flex align-center" style="flex: 1">
+                    <p class="mb-0 font-weight-light white--text" style="flex: 1">Fund NodBank</p>
+                    <p class="mb-0 font-weight-light white--text" style="flex: 1">Our Products</p>
+                    <p class="mb-0 font-weight-light white--text" style="flex: 1">The Team</p>
+                  </div>
+                </div>
+                <div class="d-flex align-center mt-8">
+                  <div style="flex: 1;">
+
+                    <p class="white--text mb-0 font-weight-light subtitle-2">&copy; Copyright {{ new Date().getFullYear() }} NodBank</p>
+                  </div>
+                  <div class="d-flex align-center" style="flex: 1">
+                    <p class="mb-0 font-weight-light white--text" style="flex: 1">Contact Us</p>
+                    <p class="mb-0 font-weight-light white--text" style="flex: 1">Terms of Use</p>
+                    <p class="mb-0 font-weight-light white--text" style="flex: 1">Privacy</p>
+                  </div>
+                </div>
+
+              </div>
+            </v-col>
+          </v-row>
+        </v-container>
+      </div>
     </div>
   </div>
 </template>
@@ -84,31 +184,19 @@ import HeaderJumbotron from '../components/sections/HeaderJumbotron.vue'
 import {gsap} from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import FeaturesBlock from '../components/sections/FeaturesBlock.vue';
+import Projections from '../components/sections/Projections.vue';
 export default {
   name: 'Home',
   components: {
     HeaderJumbotron,
     FeaturesBlock
     // HelloWorld
-  },
+  ,
+    Projections},
   mounted(){
     gsap.registerPlugin(ScrollTrigger);
     const tl = gsap.timeline();
       console.log({gsap, ScrollTrigger, tl})
-      // gsap.utils.toArray('.panel').forEach((panel, i, panels) => {
-      //   console.log({panel, i})
-      //   ScrollTrigger.create({
-      //   trigger: panel,
-      //   start: '10vh 10%',
-        
-      //   endTrigger: panel,
-      //   end: '90% 30%',
-      //   pin: panels[i + 1],
-      //   pinSpacing: false,
-      //   markers: true,
-      // })
-
-      // })
 
       ScrollTrigger.create({
         trigger: '.header',
@@ -118,7 +206,7 @@ export default {
         end: '90% 30%',
         pin: '.features',
         pinSpacing: false,
-        markers: true,
+        // markers: true,
         onLeave: () => {
           ScrollTrigger.create({
         trigger: '.create',
@@ -129,99 +217,11 @@ export default {
         end: 'bottom center',
         pin: true,
         pinSpacing: false,
-        markers: true,
+        // markers: true,
       })
         }
       })
       
-      // ScrollTrigger.create({
-      //   trigger: '.features',
-      //   start: 'center top',
-      //   showLabel: true,
-      //   endTrigger: '.features',
-      //   end: 'bottom center',
-      //   pin: '.create',
-      //   pinSpacing: false,
-      //   markers: true,
-      // })
-    // // gsap.to('.features', {
-    //   scrollTrigger: {
-    //     trigger: '.features',
-    //     start: 'center center',
-    //     endTrigger: '.header',
-        
-    //     end: 'bottom top',
-    //     scrub: true,
-    //     pin: true,
-    //     pinSpacing: false,
-    //     markers: true,
-    //     // toggleActions: 'restart none none none'
-    //   },
-    //   marginTop: '-10vh',
-    //   // ease: 'power3.out',
-    //   // duration: 1
-    
-    // })
-    // tl.fromTo('.features', {
-    //   marginTop: '-100vh',
-    // }, {
-    //   marginTop: '-10vh',
-    // })
-    // ScrollTrigger.create({
-    //   animation: tl,
-    //   trigger: ".header",
-    //   start: "top top",
-    //   endTrigger: '.create',
-    //   end: "top bottom",
-    //   // pin: '.features',
-    //   markers: true,
-    //   // pinSpacing: false,
-    //   scrub: true
-    // })
-    // tl.from('.features', {
-    //   scrollTrigger: {
-    //     trigger: '.features',
-    //     start: 'top top',
-    //     end: 'bottom bottom',
-    //     markers: true,
-    //     scrub: true,
-    //     pin: true,
-    //     id: 'features'
-    //   },
-    //   opacity: 0,
-    //   y: '-50vh',
-    //   stagger: 0.2
-    // })
-
-    // gsap.utils.toArray(".panel").forEach((panel) => {
-    //   // gsap.from(panel, {
-    //   //   scrollTrigger: {
-    //   //     trigger: panel,
-    //   //     start: "top center",
-    //   //     end: "bottom center",
-    //   //     scrub: true,
-    //   //     pin: true,
-    //   //     markers: true,
-    //   //     toggleActions: "restart none none none"
-    //   //   },
-    //   //   opacity: 0,
-    //   //   duration: 1
-    //   // })
-    // ScrollTrigger.create({
-    //   trigger: panel,
-    //   markers: true,
-    //   showLabel: true,
-    //   start: '60% center',
-      
-      
-    //   pin: true,
-    //   pinSpacing: false,
-    //   pinType: "start",
-    // })
-    // });
-    // ScrollTrigger.create({
-    //   snap: 1 / 4 // snap whole page to the closest section!
-    // });
   }
 
 }

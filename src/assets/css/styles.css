@@ -134,6 +134,10 @@ h6,
   color: var(--nodbank-black) !important;
 }
 
+.nb-black-bg {
+  background-color: var(--nodbank-black) !important;
+}
+
 .v-application .nb-bg-purple-lt {
   background-color: var(--nodbank-light-purple) !important;
 }
@@ -165,6 +169,10 @@ h6,
 .v-application .v-text-field--outlined.white-input input {
   padding: 0 10px;
   color: white;
+}
+
+.v-application .v-text-field--outlined input {
+  padding: 0 10px;
 }
 
 .v-application .v-text-field--outlined.white-input input:focus {
