@@ -6,7 +6,15 @@
           <v-col cols="12">
             <div class="d-flex align-center justify-space-between">
               <div class="d-flex align-center">
-                <v-img :src="require('@/assets/icons/logo.svg')" class="mb-2 mr-2"></v-img>
+                <v-img :src="require('@/assets/icons/logo.svg')" class="mb-2 mr-2">
+                <template v-slot:placeholder>
+                <v-row class="fill-height ma-0" align="center" justify="center">
+                  <v-progress-circular
+                    indeterminate
+                    color="primary lighten-2"
+                  ></v-progress-circular>
+                </v-row>
+              </template></v-img>
                 <h1 class="white--text nd-altfont mb-0" style="font-size: 2.4rem;">Nodbank</h1>
               </div>
               <div>
@@ -42,7 +50,15 @@
                 class="rounded-xl"
                 
                 height="100%"
-              ></v-img>
+              >
+              <template v-slot:placeholder>
+                <v-row class="fill-height ma-0" align="center" justify="center">
+                  <v-progress-circular
+                    indeterminate
+                    color="primary lighten-2"
+                  ></v-progress-circular>
+                </v-row>
+              </template></v-img>
             </v-card>
             <div style="position: absolute; top: 70px; left: -40px; min-height: 70vh; width: 125%;">
               <v-row>
@@ -52,7 +68,16 @@
                       <span class="subtitle-2 font-weight-light grey--text">Earning Summary</span>
                     </v-card-title>
                     <div class="d-flex align-start px-4">
-                      <v-img :src="require('@/assets/icons/smallchart.svg')" max-width="100"></v-img>
+                      <v-img :src="require('@/assets/icons/smallchart.svg')" max-width="100">
+                      <template v-slot:placeholder>
+                <v-row class="fill-height ma-0" align="center" justify="center">
+                  <v-progress-circular
+                    indeterminate
+                    color="primary lighten-2"
+                  ></v-progress-circular>
+                </v-row>
+              </template>
+                      </v-img>
                       <div class="ml-n4">
                         <h2>&#8358;500,000</h2>
                         <p class="caption grey--text">Since the last 7 days</p>
