@@ -126,7 +126,7 @@ h6,
 .v-application .subtitle-1, 
 .v-application .subtitle-2, 
 .v-application .title, 
-.v-application .nd-altfont {
+.v-application p.nd-altfont {
   font-family: Mazzard, sans-serif !important;
 }
 
@@ -156,6 +156,14 @@ h6,
 
 .curved-br-xl {
   border-bottom-right-radius: 80px !important;
+}
+
+.curved-bl-lg {
+  border-bottom-left-radius: 40px !important;
+}
+
+.curved-br-lg {
+  border-bottom-right-radius: 40px !important;
 }
 
 .v-application .elevated-light {

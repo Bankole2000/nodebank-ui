@@ -1,13 +1,19 @@
 <template>
   <div class="features">
-    <v-container style="padding-top: 50vh;">
+    <v-container :style="{paddingTop: $vuetify.breakpoint.mdAndUp ? '50vh': '30vh'}" >
       <v-row style="margin-bottom: 20vh;">
-        <v-col cols="12" class="mb-6">
+        <v-col cols="12" class="mb-6" v-if="$vuetify.breakpoint.mdAndUp">
           <h1 class="lined display-3 font-weight-medium">We are redefining what</h1>
           <h1 class="lined display-3 mt-4 font-weight-medium">it means to be a bank...</h1>
           <h1 class="lined mt-4">&nbsp;</h1>
         </v-col>
-        <v-col cols="12" md="4" v-for="(feature, i) in features" :key="i">
+        <div v-else class="px-8">
+          <h1 class="lined mt-4 display-1">We are redefining</h1>
+          <h1 class="lined mt-4 display-1">what it means</h1>
+          <h1 class="lined mt-4 display-1">to be a bank</h1>
+          <h1 class="lined mt-4">&nbsp;</h1>
+        </div>
+        <v-col cols="12" md="4" v-for="(feature, i) in features" :key="i" :class="$vuetify.breakpoint.mdAndUp ? '': 'px-8'">
           <div>
             <v-img width="8vh" :src="require(`@/assets/icons/${feature.icon}`)"></v-img>
           </div>
@@ -19,6 +25,7 @@
         
       </v-row>
     </v-container>
+    
   </div>
 </template>
 

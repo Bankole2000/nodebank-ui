@@ -1,6 +1,7 @@
 <template>
   <div class="header-jumbotron">
-    <div class="primary curved-bl-xl curved-br-xl" style="min-height: 110vh;">
+    <div class="primary" :class="$vuetify.breakpoint.mdAndUp ? 'curved-bl-xl curved-br-xl':'curved-bl-lg curved-br-lg'" style="min-height: 110vh;">
+      <div v-if="$vuetify.breakpoint.mdAndUp">
       <v-container>
         <v-row class="pt-10 pb-8">
           <v-col cols="12">
@@ -15,7 +16,7 @@
                   ></v-progress-circular>
                 </v-row>
               </template></v-img>
-                <h1 class="white--text nd-altfont mb-0" style="font-size: 2.4rem;">Nodbank</h1>
+                <h1 class="white--text nd-altfont mb-0" style="font-size: 2.4rem; font-family: Mazzard !important;">Nodbank</h1>
               </div>
               <div>
                 <v-btn x-large class="secondary nb-black text-capitalize curved">
@@ -34,7 +35,6 @@
             <p class="nd-altfont white--text font-weight-light title mt-6">Imagine your bank recommending your next barber, helping you book appointments plus discount on your sessions, all these and more is being made possible. You’ll be the first to know when things are up and running.</p>
             <div class="d-flex align-start">
               <v-text-field class='white-input curved' placeholder="Enter your email" outlined></v-text-field>
-              
               <v-btn class="secondary curved nb-black text-capitalize mt-1 ml-4" x-large>
                 <span class="nb-black font-weight-medium">Join Waitlist</span>
               </v-btn>
@@ -102,7 +102,7 @@
                         <v-img :src="require('@/assets/icons/star.svg')" style="position: absolute; top: -10px; left: 60%;"></v-img>
                         <v-img :src="require('@/assets/icons/star.svg')" style="position: absolute; bottom: -10px; left: 30%;"></v-img>
                       </div>
-                      <p class="caption grey--text text-center">There are <strong>12 vendors</strong> new you with discounts on your first purchase!</p>
+                      <p class="caption grey--text text-center">There are <strong>12 vendors</strong> near you with discounts on your first purchase!</p>
                     </div>
                     
                   </v-card>
@@ -115,6 +115,69 @@
           </v-col>
         </v-row>
       </v-container>
+      </div>
+      <!-- For Mobile -->
+      <div v-else>
+        <div class="px-8 py-8">
+          <h1 class="text-center white--text mb-2">The People's Bank</h1>
+          <h1 class="text-center white--text font-weight-light">Banking Tailored <br /> for you</h1>
+          <p class="nd-altfont white--text font-weight-light mt-2 text-center">Imagine your bank recommending your next barber, helping you book appointments plus discount on your sessions, all these and more is being made possible. You’ll be the first to know when things are up and running.</p>
+          <div>
+
+        <v-text-field class='white-input curved' hide-details placeholder="Enter your email" outlined></v-text-field>
+        <v-btn block class="secondary curved nb-black text-capitalize mt-4" x-large>
+                <span class="nb-black font-weight-medium">Join Waitlist</span>
+              </v-btn>
+          </div>
+          <div>
+            <div style="position: relative;">
+              <div style="position: absolute; top: -2vh; left: -3vw; z-index: 3;" class="elevated-light white rounded-lg px-3 pt-2 pb-1">
+                <div class="d-flex align-center">
+                  <!-- <v-icon small color="primary" class="mr-1">mdi-chart-bell-curve</v-icon> -->
+                <span class="caption">Earnings Summary</span>
+                </div>
+                <div class="d-flex">
+                  <v-img contain :src="require('@/assets/icons/smallchart.svg')" max-width="15vw" class="mr-2"></v-img>
+                  <div class="ml-n4">
+                    <h4>&#8358;500,000</h4>
+                    <p class="caption grey--text mb-2">Since the last 7 days</p>
+                  </div>
+                </div>
+              </div>
+              <div style="position: absolute; bottom: -2vh; right: -3vw; z-index: 3;" class="elevated-light white rounded-lg px-3 pt-2 pb-1">
+                <div class="d-flex align-center">
+                  <v-icon small color="primary" class="mr-1">mdi-check-decagram-outline</v-icon>
+                <span class="caption">Recommendations</span>
+                </div>
+                <div class="d-flex">
+                  <!-- <v-img contain :src="require('@/assets/icons/smallchart.svg')" max-width="15vw" class="mr-2"></v-img> -->
+                  <div>
+                    <!-- <h4>&#8358;500,000</h4> -->
+                    <p class="caption grey--text mb-2"><strong>12 Vendors</strong> with discounts near you</p>
+                  </div>
+                </div>
+              </div>
+
+              <v-card style="height: 100%;" class="rounded-xl pa-0 mt-12 d-flex align-end">
+              <v-img
+               :aspect-ratio="1"
+                :src="require('@/assets/images/home-image.webp')"
+                class="rounded-xl"
+                height="100%"
+              >
+              <template v-slot:placeholder>
+                <v-row class="fill-height ma-0" align="center" justify="center">
+                  <v-progress-circular
+                    indeterminate
+                    color="primary lighten-2"
+                  ></v-progress-circular>
+                </v-row>
+              </template></v-img>
+            </v-card>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div>
 
