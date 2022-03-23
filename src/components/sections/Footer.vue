@@ -66,7 +66,7 @@ export default {
           text: 'Terms of Use'
         }, 
         {
-          text: 'Privace'
+          text: 'Privacy'
         }, 
       ]
     }
