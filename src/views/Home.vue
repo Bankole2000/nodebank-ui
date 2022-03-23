@@ -12,7 +12,7 @@
       <FeaturesBlock />
       </div>
     </div>
-    <div class="panel d-flex align-center justify-center white create" :style="{paddingTop: $vuetify.breakpoint.mdAndUp ? '0': '30vh'}" style="min-height: 120vh; z-index: 2;">
+    <div class="panel d-flex align-center justify-center white create" :style="{paddingTop: $vuetify.breakpoint.mdAndUp ? '0': '0vh'}" style="min-height: 120vh; z-index: 2;">
       <div style="width: 100vw;">
         <v-container>
           <v-row style="padding-top: 20vh;">
