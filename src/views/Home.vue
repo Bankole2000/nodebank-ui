@@ -12,24 +12,25 @@
       <FeaturesBlock />
       </div>
     </div>
-    <div class="panel d-flex align-center justify-center white create" style="min-height: 120vh; margin-top: 0vh; z-index: 2;">
+    <div class="panel d-flex align-center justify-center white create" :style="{paddingTop: $vuetify.breakpoint.mdAndUp ? '0': '30vh'}" style="min-height: 120vh; z-index: 2;">
       <div style="width: 100vw;">
         <v-container>
           <v-row style="padding-top: 20vh;">
-            <v-col cols="12" md="7">
+            <v-col cols="12" md="8">
               <v-card rounded='lg' elevation="0" :class="$vuetify.breakpoint.mdAndUp ? 'pr-12': 'px-4'">
                 
                   <v-img
-                  :aspect-ratio="1"
-                    :src="require('@/assets/images/worryless.webp')"
+                  :aspect-ratio="1.3"
+                    :src="require('@/assets/images/createmore.png')"
                     class="rounded-lg"
                     height="100%"
                   >
                   <div style="height: 100%; width: 70%; position: relative;" v-if="$vuetify.breakpoint.mdAndUp">
-                    <div  style="x-index: 2; position: absolute; bottom: -8vh; left: 80%; height: 25vh; background: white; width: 30vh; border-radius: 20px; transform: rotate(50deg); transform-origin: top left;">&nbsp;</div>
+                    
+                    <svg width="auto" height="16vh" viewBox="0 0 253 248" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; bottom: 0; left: 16vw;"><g><path d="M-1.44427 0H-594.422V290H222.155H401.971V248H220.612C193.142 248 168.212 231.933 156.864 206.918L89.6238 58.6892C73.4127 22.9522 37.7977 0 -1.44427 0Z" fill="#FFFFFF"></path></g></svg>
                     <div class="white pa-6 pb-0 clipped-one rounded-tr-xl elevated-light" style="z-index; 3; height: 16vh; position: absolute; bottom: 0;">
                       <h2>Create more, worry less</h2>
-                      <p class="font-weight-light pr-16">We allow you focus more on your business, while we do the heavy lifting</p>
+                      <p v-if="$vuetify.breakpoint.mdAndUp" class="font-weight-light pr-16 nb-altfont" style="font-family: Mazzard !important;">We allow you focus more on your business, while we do the heavy lifting</p>
                     </div>
                   </div>
                   <template v-slot:placeholder>
@@ -44,10 +45,12 @@
                 
               </v-card>
             </v-col>
-            <v-col cols="12" md="5">
+            <v-col cols="12" md="4">
               <v-card class="nb-bg-green-lt pa-8 rounded-lg elevated-light" elevation="0">
                 <div class="white elevated-light" style="display: flex; align-items: center; position: relative; width: 100%; border-radius: 10px;">
-                  <div style="width: 50%" class="text-center px-4">Transfer was successful</div>
+                  <div style="width: 50%" class="text-center px-4">
+                    <span style="font-size: 14px">Transfer was successful</span>
+                  </div>
                   <div style="width: 50%; border-top-right-radius: 10px; border-bottom-right-radius: 10px;" class="text-center primary white--text py-8">$240.00</div>
                   <div style="position: absolute; top: 50%; right: 50%; transform: translate(50%, -50%)">
                     <v-btn class="secondary black--text" small fab>
@@ -58,8 +61,8 @@
                 <div class="d-flex align-center elevated-light white mt-8 px-8 py-6 rounded-lg">
                   <v-icon x-large>mdi-arrow-down-circle-outline</v-icon>
                   <div class="ml-4">
-                    <p class="mb-0">Your payment is recieved!</p>
-                    <p class="primary--text mb-0">&#8358; 500,000</p>
+                    <p class="mb-0" style="font-size: 14px">Your payment is recieved!</p>
+                    <p class="primary--text mb-0" style="font-size: 14px;">&#8358; 500,000</p>
                   </div>
                 </div>
                 <p class="mb-0 mt-8 ml-2">Freedom to move your money anytime and anywhere.</p>

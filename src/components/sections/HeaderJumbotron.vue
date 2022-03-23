@@ -59,12 +59,13 @@
           </v-col>
           <v-col sm="12" md="6" class="pl-16">
             <div style="height: 100%; position: relative">
+              <v-img :src="require('@/assets/images/ladycropped.png')" style='position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); z-index: 5; height: 100%;' contain></v-img>
             <v-card style="height: 100%;" class="rounded-xl pa-0 d-flex align-end">
               <v-img
                 :aspect-ratio="1"
-                :src="require('@/assets/images/home-image.webp')"
+                :src="require('@/assets/images/ladybackground.png')"
                 class="rounded-xl"
-                
+              
                 height="100%"
               >
               <template v-slot:placeholder>
@@ -76,6 +77,55 @@
                 </v-row>
               </template></v-img>
             </v-card>
+            <div style="position: absolute; bottom: 5vh; right: -5vw; z-index: 6; min-height: 15vh;">
+              <v-window v-model="step" style="min-height: 15vh;">
+      <v-window-item :value="1" style="min-height: 15vh;">
+               <v-card elevation="0" min-height="15vh" width="15vw" class="rounded-xl elevated-light mx-4" style="margin-top: 40vh;">
+                  <v-card-title class="mb-4">
+                    <span class="subtitle-2 font-weight-light grey--text">Recommendations</span>
+                  </v-card-title>
+                  <div class="px-4 pb-1">
+                    <v-alert text color="orange">
+                      <div class="d-flex align-center justify-space-between">
+                        <v-icon v-for="i in 5" :key="i" color="orange">mdi-star</v-icon>
+                      </div>
+                    </v-alert>
+                    <!-- <div style="position: relative;" class="mb-4">
+                      <v-img :src="require('@/assets/icons/tag.svg')"></v-img>
+                      <v-img :src="require('@/assets/icons/star.svg')" style="position: absolute; top: -10px; left: 60%;"></v-img>
+                      <v-img :src="require('@/assets/icons/star.svg')" style="position: absolute; bottom: -10px; left: 30%;"></v-img>
+                    </div> -->
+                    <p class="caption grey--text text-center">You have <strong>4 vendors</strong> for your auto insurance renewal, compare their offers here.</p>
+                  </div>
+                </v-card>
+      </v-window-item>
+       <v-window-item :value="2" style="min-height: 15vh;">
+               <v-card elevation="0" min-height="15vh" width="15vw" class="rounded-xl elevated-light mx-4" style="margin-top: 40vh;">
+                  <v-card-title class="mb-0 pb-2">
+                    <span class="subtitle-2 font-weight-light grey--text">Welcome back,</span>
+                    <p class="mb-0">Josephine B.</p>
+                  </v-card-title>
+                  <div class="px-4 pb-1">
+                    <v-alert text color="primary">
+                      <div class="text-center">
+                        <div class="d-flex justify-center">
+
+                        <v-img :src="require('@/assets/images/confetti.svg')" class="mb-1" max-width="20%"></v-img>
+                        </div>
+                        <p class="mb-0 caption font-weight-medium">It's your daughter's birthday today and we have a gift for her.</p>
+                      </div>
+                    </v-alert>
+                    <!-- <div style="position: relative;" class="mb-4">
+                      <v-img :src="require('@/assets/icons/tag.svg')"></v-img>
+                      <v-img :src="require('@/assets/icons/star.svg')" style="position: absolute; top: -10px; left: 60%;"></v-img>
+                      <v-img :src="require('@/assets/icons/star.svg')" style="position: absolute; bottom: -10px; left: 30%;"></v-img>
+                    </div> -->
+                   
+                  </div>
+                </v-card>
+      </v-window-item>
+              </v-window>
+            </div>
             <div style="position: absolute; top: 70px; left: -40px; min-height: 70vh; width: 125%;">
               <v-row>
                 <v-col cols="5">
@@ -106,19 +156,7 @@
                 </v-col>
                 <v-col cols="2"></v-col>
                 <v-col cols="4" class="pr-8">
-                  <v-card min-height="20vh" elevation="0" class="rounded-xl elevated-light" style="margin-top: 40vh;">
-                    <v-card-title>
-                      <span class="subtitle-2 font-weight-light grey--text">Recommendations</span>
-                    </v-card-title>
-                    <div class="px-4 pb-1">
-                      <div style="position: relative;" class="mb-4">
-                        <v-img :src="require('@/assets/icons/tag.svg')"></v-img>
-                        <v-img :src="require('@/assets/icons/star.svg')" style="position: absolute; top: -10px; left: 60%;"></v-img>
-                        <v-img :src="require('@/assets/icons/star.svg')" style="position: absolute; bottom: -10px; left: 30%;"></v-img>
-                      </div>
-                      <p class="caption grey--text text-center">There are <strong>12 vendors</strong> near you with discounts on your first purchase!</p>
-                    </div>
-                  </v-card>
+                 
                 </v-col>
                 <v-col cols="1"></v-col>
               </v-row>   
@@ -169,7 +207,8 @@
                   </div>
                 </div>
               </div>
-              <div style="position: absolute; bottom: -2vh; right: -3vw; z-index: 3;" class="elevated-light white rounded-lg px-3 pt-2 pb-1">
+              <v-img :src="require('@/assets/images/ladycropped.png')" style='position: absolute; bottom: 0; left: 50%; transform: translateX(-48%); z-index: 5; height: 100%;' contain></v-img>
+              <div style="position: absolute; bottom: -2vh; right: -3vw; z-index: 5;" class="elevated-light white rounded-lg px-3 pt-2 pb-1">
                 <div class="d-flex align-center">
                   <v-icon small color="primary" class="mr-1">mdi-check-decagram-outline</v-icon>
                 <span class="caption">Recommendations</span>
@@ -182,11 +221,10 @@
                   </div>
                 </div>
               </div>
-
               <v-card style="height: 100%;" class="rounded-xl pa-0 mt-12 d-flex align-end">
               <v-img
                :aspect-ratio="1"
-                :src="require('@/assets/images/home-image.webp')"
+                :src="require('@/assets/images/ladybackground.png')"
                 class="rounded-xl"
                 height="100%"
               >
@@ -222,12 +260,16 @@ export default {
       loading: false,
       sent: false,
       email: '',
+      step: 1,
     };
   },
     methods: {
     ...mapActions({
       showToast: "ui/showToast",
     }),
+    slideCards(){
+        this.step > 1 ? this.step-- : this.step++;
+    },
     async joinWaitlist() {
       this.loading = true;
       try {
@@ -257,6 +299,13 @@ export default {
         this.sent = false;
       }
     }
+
+  },
+  mounted() {
+    setInterval(() => {
+      
+      this.slideCards();
+    }, 2500);
   },
 }
 </script>

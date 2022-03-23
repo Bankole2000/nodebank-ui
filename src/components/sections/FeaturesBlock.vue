@@ -42,12 +42,12 @@ export default {
         {
           icon: 'head.svg', 
           title: 'Growing with you',
-          text: 'Going far and beyond in providing services that matter - nearby merchante recommendations - choosing to bank with us whould be about your wellbeing.'
+          text: 'At every stage of your growth, Nodbank will serve as your partner.'
         },
         {
           icon: 'safe.svg', 
           title: 'Freedom for your money',
-          text: 'Going far and beyond in providing services that matter - nearby merchante recommendations - choosing to bank with us whould be about your wellbeing.'
+          text: 'Set your money free, NodBank makes money so interoperable that the value of money held with us is worth 10x vs other services.'
         }
       ]
     }
