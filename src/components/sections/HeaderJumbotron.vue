@@ -19,9 +19,10 @@
                 <h1 class="white--text nd-altfont mb-0" style="font-size: 2.4rem; font-family: Mazzard !important;">Nodbank</h1>
               </div>
               <div>
-                <v-btn x-large class="secondary nb-black text-capitalize curved">
+                <JoinWaitlistModal />
+                <!-- <v-btn x-large class="secondary nb-black text-capitalize curved">
                   <span class="nb-black">Join Waitlist</span>
-                </v-btn>
+                </v-btn> -->
               </div>
             </div>
           </v-col>
@@ -33,19 +34,34 @@
             <div style="min-height: 70vh;" class="d-flex flex-column justify-space-between">
             <h1 class="font-weight-bold white--text" style="font-size: 4.5rem; line-height: 5.5rem">The People's Bank - banking tailored for you</h1>
             <p class="nd-altfont white--text font-weight-light title mt-6">Imagine your bank recommending your next barber, helping you book appointments plus discount on your sessions, all these and more is being made possible. You’ll be the first to know when things are up and running.</p>
-            <div class="d-flex align-start">
-              <v-text-field class='white-input curved' placeholder="Enter your email" outlined></v-text-field>
-              <v-btn class="secondary curved nb-black text-capitalize mt-1 ml-4" x-large>
+            <div class="d-flex align-start" v-if="!sent">
+              <v-text-field class='white-input curved' @keydown.enter="joinWaitlist" v-model="email" placeholder="Enter your email" outlined>
+                <template v-slot:append>
+                  <v-slide-x-transition leave-absolute>
+                    <v-progress-circular v-if="loading" size="24" color="white" indeterminate></v-progress-circular>
+                  </v-slide-x-transition>
+                </template>
+              </v-text-field>
+              
+              <v-btn @click="joinWaitlist" :loading='loading' :disabled='loading' class="secondary curved nb-black text-capitalize mt-1 ml-4" x-large>
                 <span class="nb-black font-weight-medium">Join Waitlist</span>
               </v-btn>
             </div>
+            <v-slide-y-transition leave-absolute>
+                  <v-alert v-show="sent" color="secondary" text icon="mdi-check-outline" prominent>
+                    <p class="font-weight-light mb-0">
+                    <span class="font-weight-bold">You're on the waitlist!</span>
+                    When we launch, You'll be the first to know. 👍
+                    </p>
+                  </v-alert>
+                </v-slide-y-transition>
             </div>
           </v-col>
           <v-col sm="12" md="6" class="pl-16">
             <div style="height: 100%; position: relative">
             <v-card style="height: 100%;" class="rounded-xl pa-0 d-flex align-end">
               <v-img
-               :aspect-ratio="1"
+                :aspect-ratio="1"
                 :src="require('@/assets/images/home-image.webp')"
                 class="rounded-xl"
                 
@@ -70,13 +86,13 @@
                     <div class="d-flex align-start px-4">
                       <v-img :src="require('@/assets/icons/smallchart.svg')" max-width="100">
                       <template v-slot:placeholder>
-                <v-row class="fill-height ma-0" align="center" justify="center">
-                  <v-progress-circular
-                    indeterminate
-                    color="primary lighten-2"
-                  ></v-progress-circular>
-                </v-row>
-              </template>
+                        <v-row class="fill-height ma-0" align="center" justify="center">
+                          <v-progress-circular
+                            indeterminate
+                            color="primary lighten-2"
+                          ></v-progress-circular>
+                        </v-row>
+                      </template>
                       </v-img>
                       <div class="ml-n4">
                         <h2>&#8358;500,000</h2>
@@ -90,8 +106,6 @@
                 </v-col>
                 <v-col cols="2"></v-col>
                 <v-col cols="4" class="pr-8">
-                  
-
                   <v-card min-height="20vh" elevation="0" class="rounded-xl elevated-light" style="margin-top: 40vh;">
                     <v-card-title>
                       <span class="subtitle-2 font-weight-light grey--text">Recommendations</span>
@@ -104,9 +118,7 @@
                       </div>
                       <p class="caption grey--text text-center">There are <strong>12 vendors</strong> near you with discounts on your first purchase!</p>
                     </div>
-                    
                   </v-card>
-                  
                 </v-col>
                 <v-col cols="1"></v-col>
               </v-row>   
@@ -122,13 +134,26 @@
           <h1 class="text-center white--text mb-2">The People's Bank</h1>
           <h1 class="text-center white--text font-weight-light">Banking Tailored <br /> for you</h1>
           <p class="nd-altfont white--text font-weight-light mt-2 text-center">Imagine your bank recommending your next barber, helping you book appointments plus discount on your sessions, all these and more is being made possible. You’ll be the first to know when things are up and running.</p>
-          <div>
-
-        <v-text-field class='white-input curved' hide-details placeholder="Enter your email" outlined></v-text-field>
-        <v-btn block class="secondary curved nb-black text-capitalize mt-4" x-large>
-                <span class="nb-black font-weight-medium">Join Waitlist</span>
-              </v-btn>
-          </div>
+        <div v-if="!sent">
+          <v-text-field class='white-input curved' :disabled='loading' @keydown.enter="joinWaitlist" v-model="email" hide-details placeholder="Enter your email" outlined>
+            <template v-slot:append>
+              <v-slide-x-transition leave-absolute>
+                <v-progress-circular v-if="loading" size="24" color="white" indeterminate></v-progress-circular>
+              </v-slide-x-transition>
+            </template>
+          </v-text-field>
+          <v-btn :loading='loading' @click="joinWaitlist" :disabled='loading' block class="secondary curved nb-black text-capitalize mt-4" x-large>
+            <span class="nb-black font-weight-medium">Join Waitlist</span>
+          </v-btn>
+        </div>
+        <v-slide-y-transition leave-absolute>
+          <v-alert v-show="sent" color="secondary" text icon="mdi-check-outline" prominent>
+            <p class="font-weight-light mb-0">
+            <span class="font-weight-bold">You're on the waitlist!</span>
+            When we launch, You'll be the first to know. 👍
+            </p>
+          </v-alert>
+        </v-slide-y-transition>
           <div>
             <div style="position: relative;">
               <div style="position: absolute; top: -2vh; left: -3vw; z-index: 3;" class="elevated-light white rounded-lg px-3 pt-2 pb-1">
@@ -186,8 +211,53 @@
 </template>
 
 <script>
+import API from '@/api/'
+import { mapActions } from 'vuex';
+import JoinWaitlistModal from '../modals/JoinWaitlistModal.vue';
 export default {
-
+  components: { JoinWaitlistModal },
+  data() {
+    return {
+      dialog: false,
+      loading: false,
+      sent: false,
+      email: '',
+    };
+  },
+    methods: {
+    ...mapActions({
+      showToast: "ui/showToast",
+    }),
+    async joinWaitlist() {
+      this.loading = true;
+      try {
+        const {data} =  await API.Waitlist.addToWaitlist({email: this.email});
+        console.log({data})
+        if(!data.error){
+         return this.showToast({
+            show: true,
+            message: "Added to waitlist",
+            sclass: "success",
+            timeout: 2000,
+          }).then(() => {
+            this.email = '';
+            this.loading = false;
+            this.sent = true;
+          })
+        }
+      } catch (error) {
+        console.log({error});
+        this.showToast({
+            show: true,
+            message: error.response.data.error,
+            sclass: "error",
+            timeout: 3000,
+          });
+        this.loading = false;
+        this.sent = false;
+      }
+    }
+  },
 }
 </script>
 

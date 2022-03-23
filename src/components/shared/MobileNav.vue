@@ -3,7 +3,7 @@
     <v-app-bar app color="primary" elevate-on-scroll dark>
       <v-app-bar-nav-icon x-large @click="drawer = true"></v-app-bar-nav-icon>
 
-      <v-toolbar-title style="width: 75%;" class="d-flex align-center justify-start pl-0">
+      <v-toolbar-title style="width: 75%;" class="d-flex align-center justify-center pl-0">
         <v-img class="mr-2" :src="require('@/assets/icons/logo.svg')" :aspect-ratio="1" max-width="30" contain></v-img>
         <p class="mt-1 mb-0" style="font-size: 2.5rem; font-family: Mazzard">Nodbank</p>
       </v-toolbar-title>
