@@ -46,7 +46,7 @@
               </v-card>
             </v-col>
             <v-col cols="12" md="4">
-              <v-img :src="require('@/assets/images/offering.svg')"></v-img>
+              <v-img :class="{'mx-4': !$vuetify.breakpoint.mdAndUp}" :src="require('@/assets/images/offering.svg')"></v-img>
               <!-- <v-card class="nb-bg-green-lt pa-8 rounded-lg elevated-light" elevation="0">
                 <v-img :src="require('@/assets/images/transfer.svg')" style="border-radius: 8px !important" contain></v-img>
                 <div class="white elevated-light" style="display: flex; align-items: center; position: relative; width: 100%; border-radius: 10px;">
@@ -70,7 +70,7 @@
                 <p class="mb-0 mt-8 ml-2">Freedom to move your money anytime and anywhere.</p>
               </v-card> -->
               <v-card elevation="0" class="mt-16" style="position: relative">
-                <v-img :src="require('@/assets/images/offering2.svg')" style="position: absolute; top: 0; left: 0;"></v-img>
+                <v-img :class="{'mx-4': !$vuetify.breakpoint.mdAndUp}" :src="require('@/assets/images/offering2.svg')" style="position: absolute; top: 0; left: 0;"></v-img>
                 <!-- <div style="position: absolute; top: 0; left: 0; width: 100%" class="rounded-lg pb-8 pt-10 nb-bg-green-lt elevated-light">
                   <div class="d-flex mb-12" :class="$vuetify.breakpoint.mdAndUp ? 'px-8':'px-4'">
                     <v-btn outlined color="grey lighten-1" class="text-capitalize font-weight-light">
