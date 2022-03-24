@@ -1,17 +1,18 @@
 <template>
   <div class="mobile-nav">
-    <v-app-bar app color="primary" elevate-on-scroll dark>
+    <v-app-bar app color="primary" elevate-on-scroll dark height="60px">
       <v-app-bar-nav-icon x-large @click="drawer = true"></v-app-bar-nav-icon>
-
-      <v-toolbar-title style="width: 75%;" class="d-flex align-center justify-center pl-0">
+      <v-img :src="require('@/assets/images/logomobile.svg')" max-width="150"></v-img>
+      <!-- <v-toolbar-title style="width: 75%;" class="d-flex align-center justify-center pl-0">
         <v-img class="mr-2" :src="require('@/assets/icons/logo.svg')" :aspect-ratio="1" max-width="30" contain></v-img>
-        <p class="mt-1 mb-0" style="font-size: 2.5rem; font-family: Mazzard">Nodbank</p>
-      </v-toolbar-title>
+        <p class="mt-1 mb-0" style="font-size: 2.5rem; font-family: Mazzard; font-weight: ">Nodbank</p>
+      </v-toolbar-title> -->
     </v-app-bar>
 
     <v-navigation-drawer class="primary" v-model="drawer" width="80vw" fixed temporary>
-      <v-list-item>
-        <div class="d-flex align-center justify-center" style="width: 100%">
+      <v-list-item style="height: 60px;">
+        <v-img :src="require('@/assets/images/logomobile.svg')" max-width="150" class="ml-16"></v-img>
+        <!-- <div class="d-flex align-center justify-center" style="width: 100%">
                 <v-img style="max-width: 30px" :src="require('@/assets/icons/logo.svg')" class="mb-1 mr-2" >
                 <template v-slot:placeholder>
                 <v-row class="fill-height ma-0" align="center" justify="center">
@@ -22,7 +23,7 @@
                 </v-row>
               </template></v-img>
                 <h1 class="white--text mb-0" style="font-size: 2.4rem; font-family: Mazzard !important;">Nodbank</h1>
-              </div>
+              </div> -->
       </v-list-item>
 
       <v-divider></v-divider>

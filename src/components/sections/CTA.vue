@@ -35,9 +35,9 @@
             </v-col>
           </v-row>
       </v-container>
-      <div v-else style="background-color: #F4F7F4" class="pt-10 pb-6">
-        <div class="px-8">
-          <h2 class="mb-0 text-center mb-4">Be the first to know when we launch</h2>
+      <div v-else style="background-color: #F4F7F4; border-radius: 24px" class="pt-10 pb-6 mx-8 mt-16">
+        <div class="px-13">
+          <h2 class="mb-10 text-center mb-4" style="font-size: 24px; line-height: 32px; font-weight: 600 !important;">Be the first to know when we launch</h2>
         </div>
         <div class="px-8" v-if="!sent">
           <v-text-field class='curved' :disabled='loading' v-model="email" @keydown.enter="joinWaitlist" placeholder="Enter your email" hide-details outlined>
@@ -47,7 +47,7 @@
             </v-slide-x-transition>
           </template>
           </v-text-field>
-          <v-btn @click="joinWaitlist" :loading='loading' :disabled='loading' block class="primary white--text curved nb-black text-capitalize my-4" x-large>
+          <v-btn depressed @click="joinWaitlist" :loading='loading' :disabled='loading' block class="primary white--text curved nb-black text-capitalize my-4" x-large>
             <span class="font-weight-medium">Join Waitlist</span>
           </v-btn>
         </div>

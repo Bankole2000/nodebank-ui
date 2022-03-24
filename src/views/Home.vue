@@ -26,11 +26,11 @@
                     height="100%"
                   >
                   <div style="height: 100%; width: 70%; position: relative;" v-if="$vuetify.breakpoint.mdAndUp">
-                    
-                    <svg width="auto" height="16vh" viewBox="0 0 253 248" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; bottom: 0; left: 16vw;"><g><path d="M-1.44427 0H-594.422V290H222.155H401.971V248H220.612C193.142 248 168.212 231.933 156.864 206.918L89.6238 58.6892C73.4127 22.9522 37.7977 0 -1.44427 0Z" fill="#FFFFFF"></path></g></svg>
-                    <div class="white pa-6 pb-0 clipped-one rounded-tr-xl elevated-light" style="z-index; 3; height: 16vh; position: absolute; bottom: 0;">
-                      <h2>Create more, worry less</h2>
-                      <p v-if="$vuetify.breakpoint.mdAndUp" class="font-weight-light pr-16 nb-altfont" style="font-family: Mazzard !important;">We allow you focus more on your business, while we do the heavy lifting</p>
+                    <svg width="7" height="7" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; bottom: calc(18vh - 1px); left: 0; z-index: 6;"><path d="M0 0C0 3.31371 2.68629 6 6 6H0V0Z" fill="white"></path></svg>
+                    <svg width="auto" height="18vh" viewBox="0 0 253 248" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; bottom: 0; left: 16vw;"><g><path d="M-1.44427 0H-594.422V290H222.155H401.971V248H220.612C193.142 248 168.212 231.933 156.864 206.918L89.6238 58.6892C73.4127 22.9522 37.7977 0 -1.44427 0Z" fill="#FFFFFF"></path></g></svg>
+                    <div class="white py-6 pl-0 pb-0 clipped-one rounded-tr-xl elevated-light" style="z-index; 3; height: 18vh; position: absolute; bottom: 0; padding-top: calc(2vh + 24px) !important;">
+                      <h2 style="font-weight: 600; font-size: 32px; line-height: 32.19px" class="mb-4">Create more, worry less</h2>
+                      <p v-if="$vuetify.breakpoint.mdAndUp" class="font-weight-light pr-16 nb-altfont" style="font-family: Mazzard !important; font-size: 18px; font-weight: 400 !important; line-height: 24px;">We allow you focus more on your business, while we do the heavy lifting</p>
                     </div>
                   </div>
                   <template v-slot:placeholder>
@@ -46,7 +46,9 @@
               </v-card>
             </v-col>
             <v-col cols="12" md="4">
-              <v-card class="nb-bg-green-lt pa-8 rounded-lg elevated-light" elevation="0">
+              <v-img :src="require('@/assets/images/offering.svg')"></v-img>
+              <!-- <v-card class="nb-bg-green-lt pa-8 rounded-lg elevated-light" elevation="0">
+                <v-img :src="require('@/assets/images/transfer.svg')" style="border-radius: 8px !important" contain></v-img>
                 <div class="white elevated-light" style="display: flex; align-items: center; position: relative; width: 100%; border-radius: 10px;">
                   <div style="width: 50%" class="text-center px-4">
                     <span style="font-size: 14px">Transfer was successful</span>
@@ -66,9 +68,10 @@
                   </div>
                 </div>
                 <p class="mb-0 mt-8 ml-2">Freedom to move your money anytime and anywhere.</p>
-              </v-card>
+              </v-card> -->
               <v-card elevation="0" class="mt-16" style="position: relative">
-                <div style="position: absolute; top: 0; left: 0; width: 100%" class="rounded-lg pb-8 pt-10 nb-bg-green-lt elevated-light">
+                <v-img :src="require('@/assets/images/offering2.svg')" style="position: absolute; top: 0; left: 0;"></v-img>
+                <!-- <div style="position: absolute; top: 0; left: 0; width: 100%" class="rounded-lg pb-8 pt-10 nb-bg-green-lt elevated-light">
                   <div class="d-flex mb-12" :class="$vuetify.breakpoint.mdAndUp ? 'px-8':'px-4'">
                     <v-btn outlined color="grey lighten-1" class="text-capitalize font-weight-light">
                       <span>Cashflow</span>
@@ -87,7 +90,7 @@
 
                     <p class="nb-altfont mb-0">Get reports on your cashflow and monitor expenses</p>
                   </div>
-                </div>
+                </div> -->
               </v-card>
             </v-col>
           </v-row>
@@ -98,8 +101,8 @@
     <div class="panel" style="min-height: 80vh; background-color: none;">
       &nbsp;
     </div>
-    <div class="panel white" :style="{marginTop: $vuetify.breakpoint.mdAndUp ? '-100px': '100px'}">
-      <div class="d-flex align-center justify-center" style="min-height: 110vh; background-color: #F4F7F4" :style="{backgroundImage: `url(${require('@/assets/images/backgroundImages/purplegradient.svg')}), url(${require('@/assets/images/backgroundImages/greengradient.svg')})`, backgroundPosition: 'top left 20vw, top right 0px'}">
+    <div class="panel white" :style="{marginTop: $vuetify.breakpoint.mdAndUp ? '-100px': '35vh'}">
+      <div class="d-flex align-center justify-center" style="min-height: 110vh; background-color: #F4F7F4" :style="gradientBackground">
 
       <Projections />
       </div>
@@ -136,6 +139,20 @@ export default {
     Footer,
     CTA,
     Products},
+  computed: {
+    gradientBackground(){
+      if(this.$vuetify.breakpoint.mdAndUp){
+        return {
+          backgroundImage: `url(${require('@/assets/images/backgroundImages/purplegradient.svg')}), url(${require('@/assets/images/backgroundImages/greengradient.svg')})`, 
+          backgroundPosition: 'top left 20vw, top right 0px'
+        }
+      }
+      return {
+         backgroundImage: `url(${require('@/assets/images/backgroundImages/smallpurple.svg')}), url(${require('@/assets/images/backgroundImages/smallgreen.svg')})`, 
+          backgroundPosition: 'top left 20vw, top right 0px'
+      }
+    }
+  },
   mounted(){
     gsap.registerPlugin(ScrollTrigger);
     const tl = gsap.timeline();

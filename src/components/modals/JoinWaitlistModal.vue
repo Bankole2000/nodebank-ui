@@ -2,8 +2,8 @@
   <div class="join-waitlist-modal">
     <v-dialog persistent v-model="dialog" width="500">
       <template v-slot:activator="{ on, attrs }">
-        <v-btn  x-large v-bind="attrs" v-on="on" :block='!$vuetify.breakpoint.mdAndUp' class="secondary nb-black text-capitalize curved">
-          <span class="nb-black">Join Waitlist</span>
+        <v-btn depressed x-large v-bind="attrs" v-on="on" :block='!$vuetify.breakpoint.mdAndUp' class="secondary nb-black text-capitalize curved">
+          <span class="primary--text">Join Waitlist</span>
         </v-btn>
         <!-- <v-btn color="red lighten-2" dark v-bind="attrs" v-on="on">
           Click Me
