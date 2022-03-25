@@ -7,7 +7,8 @@ module.exports = {
     });
   },
   // publicPath: process.env.NODE_ENV === "production" ? "/webpieces/" : "/"
-  publicPath: process.env.NODE_ENV === "production" ? "/nodebank-ui" : "/"
+  // publicPath: process.env.NODE_ENV === "production" ? "/nodebank-ui" : "/"
+  publicPath: process.env.NODE_ENV === "production" ? "/" : "/"
   // publicPath: '',
   // baseUrl: '/projects/vue/webpieces/dist/',
 };
